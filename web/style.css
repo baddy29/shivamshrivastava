@@ -1,0 +1,19 @@
+/* css/style.css */
+body { margin: 0; font-family: Arial, sans-serif; }
+.navbar { background: #004080; padding: 1rem 0; }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; width: 90%; margin: auto; }
+.navbar .logo { color: #fff; font-size: 1.5rem; text-decoration: none; }
+.navbar .nav-links { list-style: none; display: flex; gap: 1rem; }
+.navbar .nav-links a { color: #fff; text-decoration: none; }
+.hero { background: #e0e0e0; text-align: center; padding: 4rem 1rem; }
+.hero h1 { margin: 0; font-size: 2.5rem; }
+.hero p { font-size: 1.2rem; }
+.section { padding: 2rem 1rem; width: 90%; margin: auto; }
+.section h2 { border-bottom: 2px solid #004080; padding-bottom: 0.5rem; }
+.section ul { list-style: none; padding: 0; }
+.section ul li { margin: 1rem 0; }
+.tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.tab-btn { padding: 0.5rem 1rem; border: none; cursor: pointer; background: #ddd; }
+.tab-btn.active { background: #004080; color: #fff; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
