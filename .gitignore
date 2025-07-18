@@ -1,0 +1,20 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# FastAPI data (optional)
+/backend/data/content.json
+
+# Node / Next.js
+portfolio-momorepo/frontend/node_modules/
+portfolio-momorepo/frontend/.next/
+portfolio-momorepo/frontend/out/
+.env.local
+npm-debug.log*
+
+# Editor & OS
+.vscode/
+.DS_Store
+Thumbs.db
