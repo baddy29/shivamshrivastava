@@ -1,9 +1,10 @@
 [build]
-  command   = "npm install && npm run export"
-  publish   = "frontend/out"
+  base    = "frontend"
+  command = "npm install && npm run build"
+  publish = "frontend/out"
 
 [[redirects]]
   from = "/api/*"
-  to = "https://shivamshrivastava.onrender.com/:splat"
+  to   = "https://shivamshrivastava.onrender.com/:splat"
   status = 200
-  force = true
+  force  = true
