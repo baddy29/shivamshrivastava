@@ -8,9 +8,19 @@ venv/
 /backend/data/content.json
 
 # Node / Next.js
+portfolio-monorepo/frontend/node_modules/
+portfolio-monorepo/frontend/.next/
+portfolio-monorepo/frontend/out/
 portfolio-momorepo/frontend/node_modules/
 portfolio-momorepo/frontend/.next/
 portfolio-momorepo/frontend/out/
+/node_modules
+/frontend/node_modules
+/.next
+/out
+/frontend/out/
+/frontend/.next/
+
 .env.local
 npm-debug.log*
 
