@@ -4,11 +4,14 @@ import json, os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-
+origins = [
+    "http://localhost:3000",             # local frontend
+    "https://shivam-shrivastava-portfolio.netlify.app/"  # deployed frontend
+]
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )
