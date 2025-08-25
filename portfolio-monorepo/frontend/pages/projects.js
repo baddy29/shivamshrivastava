@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Box, Heading, Text, Link } from '@chakra-ui/react';
 
 export async function getStaticProps() {
-  const res = await axios.get(`${process.env.API_BASE}/api/projects`);
+  const res = await axios.get(`${process.env.API_BASE}/projects`);
   return { props: { projects: res.data } };
 }
 
