@@ -21,6 +21,11 @@ DATA_PATH = os.path.join(os.path.dirname(__file__), 'data', 'content.json')
 with open(DATA_PATH) as f:
     content = json.load(f)
 
+# This is the route you are missing
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to my PhD Portfolio"}
+
 @app.get("/api/projects")
 def get_projects():
     return content.get('projects', [])
