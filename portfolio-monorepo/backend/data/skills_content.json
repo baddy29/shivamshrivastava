@@ -1,0 +1,62 @@
+{
+  "skills": [
+    {
+      "category": "Programming Languages",
+      "icon": "💻",
+      "items": [
+        {
+          "name": "Python",
+          "technologies": ["PyTorch", "Pandas", "NumPy", "Scikit-learn"]
+        },
+        {
+          "name": "Java",
+          "technologies": ["Spring Boot", "JEE", "REST APIs"]
+        },
+        {
+          "name": "Scripting",
+          "technologies": ["JavaScript", "jQuery", "Next.js", "AJAX"]
+        }
+      ]
+    },
+    {
+      "category": "Database & ORM",
+      "icon": "🗄️",
+      "items": [
+        {
+          "name": "Database Management",
+          "technologies": ["SQL", "Hibernate"]
+        }
+      ]
+    },
+    {
+      "category": "Development Tools",
+      "icon": "🛠️",
+      "items": [
+        {
+          "name": "Development Tools",
+          "technologies": ["Swagger", "Postman", "Git"]
+        }
+      ]
+    },
+    {
+      "category": "Methodologies",
+      "icon": "📋",
+      "items": [
+        {
+          "name": "Agile Methodologies",
+          "technologies": ["JIRA", "Kanban"]
+        }
+      ]
+    },
+    {
+      "category": "Deep Learning",
+      "icon": "🧠",
+      "items": [
+        {
+          "name": "Deep Learning Frameworks",
+          "technologies": ["CNNs", "MLPs", "GANs", "Transformers"]
+        }
+      ]
+    }
+  ]
+}

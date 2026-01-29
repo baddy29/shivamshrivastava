@@ -1,0 +1,24 @@
+{
+    "affiliations": [
+      {
+        "role": "Research Assistant",
+        "organization": "Smart, Sustainable and Resilient Systems Lab",
+        "url": "https://hnhqc.mufaculty.umsystem.edu/ssrs-lab",
+        "location": "Columbia, MO",
+        "type": "Research"
+      },
+      {
+        "role": "PhD. Student",
+        "organization": "Industrial and Systems Engineering Department",
+        "department": "University of Missouri",
+        "location": "Columbia, MO",
+        "type": "Academic"
+      },
+      {
+        "role": "Founder",
+        "organization": "VSP Freelancing Solutions",
+        "location": "Gurugram, India",
+        "type": "Entrepreneurship"
+      }
+    ]
+  }

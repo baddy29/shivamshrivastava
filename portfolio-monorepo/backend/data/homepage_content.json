@@ -1,0 +1,26 @@
+{
+    "about": {
+      "text": "PhD student in Industrial and Systems Engineering with focus on use of computer vision and reinforcement learning for pre-and post-disaster evacuation, and transportation. I also hold an MS degree in Computer Science and possess five years of experience in microservices development. I am actively seeking internship opportunities to leverage cross-domain expertise to optimize products and services. Committed to continuous learning and contributing to the team's growth."
+    },
+    "blogs": {
+      "astronomy": [
+        { "title": "Stargazing 101", "excerpt": "Getting started with your first telescope." },
+        { "title": "The Mars Mission", "excerpt": "Updates on the latest rover findings." },
+        { "title": "Black Holes", "excerpt": "Understanding the event horizon." }
+      ],
+      "sports": [
+        { "title": "Cricket World Cup", "excerpt": "Analysis of the final match." },
+        { "title": "F1 Strategy", "excerpt": "How tire choices win races." },
+        { "title": "Tennis Technique", "excerpt": "Mastering the backhand slice." }
+      ],
+      "travel": [
+        { "title": "Backpacking Japan", "excerpt": "A two-week itinerary from Tokyo to Kyoto." },
+        { "title": "Hiking the Rockies", "excerpt": "Best trails for intermediate hikers." },
+        { "title": "Street Food Guide", "excerpt": "Must-eats in Southeast Asia." }
+      ]
+    },
+    "contact": {
+      "emails": ["shivamshrivastav2321@gmail.com", "ssyr9@umsystem.edu"],
+      "linkedin": "https://www.linkedin.com/in/shivam-shrivastava-18a14513a/"
+    }
+  }

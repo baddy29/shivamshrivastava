@@ -1,0 +1,7 @@
+{
+  "education": [
+    {"Ph.D.": "Industrial and Systems Engineering", "institution": "University of Missouri", "years": "2025-Present"},
+    {"MS": "Computer Science", "institution": "University of Missouri", "years": "2023-2025", "GPA": "3.6/4.0"},
+    {"B.Tech": "Information Technology", "institution": "Dr. A.P.J Abdul Kalam Technical University (formely UPTU)", "years": "2014-2018", "Division": "First Class"}
+  ]
+}

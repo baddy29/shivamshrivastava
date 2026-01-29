@@ -1,0 +1,73 @@
+{
+  "experience": [
+    {
+      "title": "Teaching Assistant",
+      "company": "University of Missouri",
+      "location": "Columbia, Missouri",
+      "startDate": "Aug 2025",
+      "endDate": "Current",
+      "isCurrent": true,
+      "responsibilities": [
+        "Facilitating in grading and resolving student queries for course ISE 4230 Stochastic Models in Operations Research."
+      ]
+    },
+    {
+      "title": "Research Assistant",
+      "company": "University of Missouri",
+      "location": "Columbia, Missouri",
+      "startDate": "Jun 2024",
+      "endDate": "Current",
+      "isCurrent": true,
+      "responsibilities": [
+        "Conducted independent research on post-disaster damage assessment utilizing deep learning models.",
+        "Developed models to segment buildings based on damage levels from satellite imagery.",
+        "Performed independent study and model development for foreign object detection in airport security scans.",
+        "Contributed to grant writing and co-authored a survey paper on federated learning."
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Deutsche Telkom Digital Labs",
+      "location": "Gurgaon, India",
+      "startDate": "Jul 2022",
+      "endDate": "Aug 2023",
+      "isCurrent": false,
+      "responsibilities": [
+        "Delivered full-fledged product feature of fixed-line relocation.",
+        "Optimized the feature of tariff change loading and implementing.",
+        "Common CI/CD pipeline integration for swagger files along with their lint, breaking-change reporting and maintaining diff versions.",
+        "Hands-on aws, swagger, kubernetes, CI/CD, Java11, Multi-threading."
+      ],
+      "technologies": ["AWS", "Swagger", "Kubernetes", "CI/CD", "Java 11", "Multi-threading"]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "ACS Solutions",
+      "location": "Noida, India",
+      "startDate": "Jul 2021",
+      "endDate": "Jul 2022",
+      "isCurrent": false,
+      "responsibilities": [
+        "Developed REST APIs for Harmonizer, enabling efficient pre-processing and harmonization of large datasets.",
+        "Designed and implemented product features for retail measurement and analysis at NielsenIQ.",
+        "Created metadata storage solutions in PostgreSQL for numerous retail stores and products.",
+        "Utilized Spring Boot, Spring Data, Azure services, and Hadoop as primary technology stack.",
+        "Authored JUnit test cases with Mockito to ensure software reliability."
+      ],
+      "technologies": ["Spring Boot", "Spring Data", "Azure", "Hadoop", "PostgreSQL", "JUnit", "Mockito"]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Nucleus Software Exports Pvt. Ltd.",
+      "location": "Noida, India",
+      "startDate": "Jun 2018",
+      "endDate": "Jul 2021",
+      "isCurrent": false,
+      "responsibilities": [
+        "Developed web services for Loan Management System to integrate third-party APIs.",
+        "Created API for authenticating vehicle Registration Certificates using KarzaAPI data."
+      ],
+      "technologies": ["REST APIs", "Third-party Integration", "KarzaAPI"]
+    }
+  ]
+}
