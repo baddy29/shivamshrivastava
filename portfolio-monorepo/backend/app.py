@@ -8,6 +8,7 @@ from service.skills import get_skills
 from service.publications import get_publications
 from service.affiliations import get_affiliations
 from service.home import get_homepage
+from service.projects import get_projects
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -45,35 +46,21 @@ PUBLICATIONS_DATA_PATH = os.path.join(os.path.dirname(__file__), 'data', 'public
 AFFILIATIONS_DATA_PATH = os.path.join(os.path.dirname(__file__), 'data', 'affiliations_content.json')
 ABOUT_DATA_PATH = os.path.join(os.path.dirname(__file__), 'data', 'homepage_content.json')
 
-logger.info(f"Loading content from: {PROJECTS_PATH}")
-try:
-    with open(PROJECTS_PATH) as f:
-        content = json.load(f)
-    logger.info(f"Successfully loaded content.json with {len(content)} sections")
-except FileNotFoundError:
-    logger.error(f"Content file not found: {PROJECTS_PATH}")
-    content = {}
-except json.JSONDecodeError as e:
-    logger.error(f"Failed to parse JSON from {PROJECTS_PATH}: {e}")
-    content = {}
-
 @app.get("/")
 def read_root():
     logger.info("GET / - Root endpoint accessed")
-    return {"message": "Thanks for visiting my portfolio!"}
-
-@app.get("/api/projects")
-def get_projects():
-    logger.info("GET /api/projects - Fetching projects")
-    projects = content.get('projects', [])
-    logger.info(f"Returning {len(projects)} projects")
-    return projects
+    return {"message": "Thanks for visiting my page!"}
 
 @app.get("/api/{section}")
 def get_section(section: str):
     logger.info(f"GET /api/{section} - Fetching section: {section}")
     try:
-        if section == "education":
+        if section == "projects":
+            logger.info(f"Loading projects data from: {PROJECTS_PATH}")
+            projects = get_projects(PROJECTS_PATH)
+            logger.info(f"Returning {len(projects)} projects")
+            return {"projects": projects}
+        elif section == "education":
             return get_education(EDUCATION_DATA_PATH)
         elif section == "experience" or section == "career":
             return get_experience(EXPERIENCE_DATA_PATH)
@@ -90,12 +77,8 @@ def get_section(section: str):
             logger.info(f"Successfully retrieved about data")
             return about_data
         else:
-            section_data = content.get(section, {})
-            if section_data:
-                logger.info(f"Found section '{section}' in content")
-            else:
-                logger.warning(f"Section '{section}' not found in content")
-            return section_data
+            logger.warning(f"Section '{section}' not found in configured API sections")
+            return {}
     except Exception as e:
         logger.error(f"Error fetching section '{section}': {e}", exc_info=True)
         raise
