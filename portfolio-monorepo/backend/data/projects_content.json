@@ -1,25 +1,24 @@
 {
   "projects": [
-    {"url": "https://github.com/baddy29/computer-vision.git", "title": "Computer Vision & Image Processing", "description": "This repo contains various projects related to computer vision and image processing."},
-    {"url": "https://github.com/baddy29/CNN-VS-MLP-ON-MNIST.git", "title": "CNN vs MLP on MNIST", "description": "..."},
-    {"url": "https://github.com/baddy29/google-stock-data-prediction.git", "title": "Google Stock Data Prediction (LSTM)", "description": "..."},
-    {"url": "https://github.com/baddy29/computational-intelligence.git", "title": "Computational Intelligence: Genetic Algorithms", "description": "..."}
-  ],
-  "career": [{"url": "https://github.com/baddy29/computer-vision.git", "title": "Computer Vision & Image Processing", "description": "This repo contains various projects related to computer vision and image processing."},
-  {"url": "https://github.com/baddy29/CNN-VS-MLP-ON-MNIST.git", "title": "CNN vs MLP on MNIST", "description": "..."},
-  {"url": "https://github.com/baddy29/google-stock-data-prediction.git", "title": "Google Stock Data Prediction (LSTM)", "description": "..."},
-  {"url": "https://github.com/baddy29/computational-intelligence.git", "title": "Computational Intelligence: Genetic Algorithms", "description": "..."}],
-  "skills": {"url": "https://github.com/baddy29/CNN-VS-MLP-ON-MNIST.git", "title": "CNN vs MLP on MNIST", "description": "..."},
-  "achievements": [{"url": "https://github.com/baddy29/computer-vision.git", "title": "Computer Vision & Image Processing", "description": "This repo contains various projects related to computer vision and image processing."},
-  {"url": "https://github.com/baddy29/CNN-VS-MLP-ON-MNIST.git", "title": "CNN vs MLP on MNIST", "description": "..."},
-  {"url": "https://github.com/baddy29/google-stock-data-prediction.git", "title": "Google Stock Data Prediction (LSTM)", "description": "..."},
-  {"url": "https://github.com/baddy29/computational-intelligence.git", "title": "Computational Intelligence: Genetic Algorithms", "description": "..."}],
-  "news": [{"url": "https://github.com/baddy29/computer-vision.git", "title": "Computer Vision & Image Processing", "description": "This repo contains various projects related to computer vision and image processing."},
-  {"url": "https://github.com/baddy29/CNN-VS-MLP-ON-MNIST.git", "title": "CNN vs MLP on MNIST", "description": "..."},
-  {"url": "https://github.com/baddy29/google-stock-data-prediction.git", "title": "Google Stock Data Prediction (LSTM)", "description": "..."},
-  {"url": "https://github.com/baddy29/computational-intelligence.git", "title": "Computational Intelligence: Genetic Algorithms", "description": "..."}],
-  "affiliations": [{"url": "https://github.com/baddy29/computer-vision.git", "title": "Computer Vision & Image Processing", "description": "This repo contains various projects related to computer vision and image processing."},
-  {"url": "https://github.com/baddy29/CNN-VS-MLP-ON-MNIST.git", "title": "CNN vs MLP on MNIST", "description": "..."},
-  {"url": "https://github.com/baddy29/google-stock-data-prediction.git", "title": "Google Stock Data Prediction (LSTM)", "description": "..."},
-  {"url": "https://github.com/baddy29/computational-intelligence.git", "title": "Computational Intelligence: Genetic Algorithms", "description": "..."}]
+    {
+      "url": "https://github.com/baddy29/computer-vision.git",
+      "title": "Computer Vision & Image Processing",
+      "description": "This repo contains various projects related to computer vision and image processing."
+    },
+    {
+      "url": "https://github.com/baddy29/CNN-VS-MLP-ON-MNIST.git",
+      "title": "CNN vs MLP on MNIST",
+      "description": "This project implements neural networks using two different architectures – linear neural network and convolution neural network. It aims to optimize the neural network to predict MNIST digit dataset. Few models were created, and accuracy of the predicted output were tabulated in terms of various accuracy criterion. It was observed that convolutional neural net performs better in predicting the digit image with stochastic gradient descent used as an optimizer. Increasing the number of input neurons to multi-layer perceptron in the convolutional neural network increases the accuracy of the model but it also slows down the training time by 4 times."
+    },
+    {
+      "url": "https://github.com/baddy29/google-stock-data-prediction.git",
+      "title": "Google Stock Data Prediction (LSTM)",
+      "description": "Recurrent neural network are mostly used for predicting sequential or temporal data. Due to shortcomings like vanishing gradients or exploding gradients, long sequenced inputs sometimes are unable to train the model properly. Hence, another type of RNN which is long short term memory (LSTM) RNN is implemented to overcome those shortcomings of RNN. A Google stock price, which is a temporal dataset, is used in this project to highlight this issue. It can be seen in the experiments that LSTM generalizes the model better than RNN. Although, some architectures of RNN like Multiple input single output (MISO) and Multiple input and multiple output (MIMO) are also compared, which showed that MIMO is superior over MISO."
+    },
+    {
+      "url": "https://github.com/baddy29/computational-intelligence.git",
+      "title": "Computational Intelligence: Genetic Algorithms",
+      "description": "This project demonstrates the ability of genetic algorithms to efficiently address optimization problems. It targets three minimization functions — Rastrigin function, Rosenbrock function and Sphere function — for optimization using genetic algorithms."
+    }
+  ]
 }
