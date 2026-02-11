@@ -66,7 +66,7 @@ export default function Home({ data }) {
         {items && items.map((blog, idx) => (
           <Box
             key={idx}
-            minW="200px" // Ensures cards are wide enough to require scrolling
+            minW={{ base: "180px", md: "220px" }} // Ensures cards are wide enough to require scrolling, adaptable on mobile
             p={4}
             bg={useColorModeValue('gray.50', 'gray.700')}
             borderRadius="md"
@@ -87,7 +87,7 @@ export default function Home({ data }) {
     <Box>
       {/* 1. Cover Picture Section */}
       <Box 
-        h="300px" 
+        h={{ base: "220px", md: "300px" }} 
         w="100%" 
         bgImage="url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')" // Placeholder Tech/Space image
         bgPosition="center" 
@@ -102,7 +102,11 @@ export default function Home({ data }) {
           alignItems="center" 
           justifyContent="center"
         >
-          <Heading color="white" size="2xl" textAlign="center">
+          <Heading 
+            color="white" 
+            size={{ base: "xl", md: "2xl" }} 
+            textAlign="center"
+          >
             Welcome to My Portfolio
           </Heading>
         </Box>
@@ -113,10 +117,20 @@ export default function Home({ data }) {
         {/* 2. About Me Section */}
         <VStack spacing={8} align="stretch" mb={12}>
           <Box>
-            <Heading size="xl" mb={4} borderBottom="2px solid" borderColor="blue.500" display="inline-block">
+            <Heading 
+              size={{ base: "lg", md: "xl" }} 
+              mb={4} 
+              borderBottom="2px solid" 
+              borderColor="blue.500" 
+              display="inline-block"
+            >
               About Me
             </Heading>
-            <Text fontSize="lg" lineHeight="tall" textAlign="justify">
+            <Text 
+              fontSize={{ base: "md", md: "lg" }} 
+              lineHeight="tall" 
+              textAlign="justify"
+            >
               {about?.text || "Loading..."}
             </Text>
           </Box>
@@ -128,7 +142,7 @@ export default function Home({ data }) {
             Blogs
           </Heading>
           
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6}>
+          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 4, md: 6 }}>
             <BlogCategory title="Astronomy" items={blogs?.astronomy} />
             <BlogCategory title="Sports" items={blogs?.sports} />
             <BlogCategory title="Travel" items={blogs?.travel} />
@@ -138,13 +152,17 @@ export default function Home({ data }) {
       </Container>
 
       {/* 4. Footer */}
-      <Box bg="gray.800" color="white" py={8} mt={8}>
+      <Box bg="gray.800" color="white" py={{ base: 6, md: 8 }} mt={8}>
         <Container maxW="container.xl">
-          <VStack spacing={4}>
+          <VStack spacing={4} align="stretch">
             <Heading size="md" color="gray.300">Contact Information</Heading>
             <Divider borderColor="gray.600" maxW="200px" />
             
-            <HStack spacing={8} wrap="wrap" justify="center">
+            <HStack 
+              spacing={{ base: 4, md: 8 }} 
+              flexWrap="wrap" 
+              justify="center"
+            >
               {contact?.emails && contact.emails.map((email, idx) => (
                 <HStack key={idx}>
                   <EmailIcon color="blue.300" />
