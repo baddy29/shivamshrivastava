@@ -1,3 +1,4 @@
+import { useState, useCallback, useEffect } from 'react';
 import axios from 'axios';
 import {
   Box,
@@ -6,14 +7,25 @@ import {
   VStack,
   HStack,
   Container,
-  SimpleGrid,
   useColorModeValue,
-  Flex,
   Link,
   Icon,
-  Divider
+  Divider,
+  IconButton
 } from '@chakra-ui/react';
-import { ExternalLinkIcon, EmailIcon } from '@chakra-ui/icons';
+import { ExternalLinkIcon, EmailIcon, ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
+import { motion, AnimatePresence } from 'framer-motion';
+
+// Cover images for swipeable carousel
+const COVER_IMAGES = [
+  '/images/nheri.jpeg',
+  '/images/informs-1.jpeg',
+  '/images/deterministic-split.png',
+  '/images/Stochastic-Q-value.png',
+  '/images/reward-event.png',
+  '/images/informs-2.jpeg',
+  '/images/yolo-pred.png',
+];
 
 // Simple LinkedIn Icon Component
 const LinkedInIcon = (props) => (
@@ -33,122 +45,158 @@ export async function getStaticProps() {
 }
 
 export default function Home({ data }) {
-  const { about, blogs, contact } = data || {};
-  
-  const bgSection = useColorModeValue('gray.50', 'gray.900');
-  const cardBg = useColorModeValue('white', 'gray.800');
-  const borderColor = useColorModeValue('gray.200', 'gray.700');
+  const { about, contact } = data || {};
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
-  // Helper component for a Blog Category Column
-  const BlogCategory = ({ title, items }) => (
-    <Box 
-      bg={cardBg} 
-      p={5} 
-      borderRadius="lg" 
-      borderWidth="1px" 
-      borderColor={borderColor}
-      height="100%"
-      shadow="md"
-    >
-      <Heading size="md" mb={4} color="blue.500">{title}</Heading>
-      
-      {/* Horizontal Swipe Container */}
-      <Flex 
-        overflowX="auto" 
-        gap={4} 
-        pb={4}
-        css={{
-          '&::-webkit-scrollbar': { height: '8px' },
-          '&::-webkit-scrollbar-track': { background: 'transparent' },
-          '&::-webkit-scrollbar-thumb': { background: '#CBD5E0', borderRadius: '4px' },
-        }}
-      >
-        {items && items.map((blog, idx) => (
-          <Box
-            key={idx}
-            minW={{ base: "180px", md: "220px" }} // Ensures cards are wide enough to require scrolling, adaptable on mobile
-            p={4}
-            bg={useColorModeValue('gray.50', 'gray.700')}
-            borderRadius="md"
-            borderWidth="1px"
-            borderColor={borderColor}
-          >
-            <Text fontWeight="bold" noOfLines={2} mb={2}>{blog.title}</Text>
-            <Text fontSize="sm" color="gray.500" noOfLines={3}>
-              {blog.excerpt}
-            </Text>
-          </Box>
-        ))}
-      </Flex>
-    </Box>
-  );
+  const goNext = useCallback(() => {
+    setSlideIndex((i) => (i + 1) % COVER_IMAGES.length);
+  }, []);
+  const goPrev = useCallback(() => {
+    setSlideIndex((i) => (i - 1 + COVER_IMAGES.length) % COVER_IMAGES.length);
+  }, []);
+
+  // Auto-advance every 5 seconds
+  useEffect(() => {
+    const t = setInterval(goNext, 5000);
+    return () => clearInterval(t);
+  }, [goNext]);
+
+  const minSwipeDistance = 50;
+  const onTouchStart = (e) => setTouchStart(e.targetTouches[0].clientX);
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+  const onTouchEnd = () => {
+    if (touchStart == null || touchEnd == null) return;
+    const distance = touchStart - touchEnd;
+    if (distance > minSwipeDistance) goNext();
+    else if (distance < -minSwipeDistance) goPrev();
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
 
   return (
     <Box>
-      {/* 1. Cover Picture Section */}
-      <Box 
-        h={{ base: "220px", md: "300px" }} 
-        w="100%" 
-        bgImage="url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')" // Placeholder Tech/Space image
-        bgPosition="center" 
-        bgSize="cover"
+      {/* Swipeable Cover Carousel */}
+      <Box
         position="relative"
+        h={{ base: "220px", md: "300px" }}
+        w="100%"
+        overflow="hidden"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
       >
-        <Box 
-          position="absolute" 
-          top={0} left={0} right={0} bottom={0} 
-          bg="blackAlpha.600" 
-          display="flex" 
-          alignItems="center" 
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={slideIndex}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.3 }}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundImage: `url('${COVER_IMAGES[slideIndex]}')`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+            }}
+          />
+        </AnimatePresence>
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          right={0}
+          bottom={0}
+          bg="blackAlpha.600"
+          display="flex"
+          alignItems="center"
           justifyContent="center"
+          pointerEvents="none"
         >
-          <Heading 
-            color="white" 
-            size={{ base: "xl", md: "2xl" }} 
+          <Heading
+            color="white"
+            size={{ base: "xl", md: "2xl" }}
             textAlign="center"
           >
-            Welcome to My Portfolio
+            Computer Vision and Reinforcement Learning Researcher
           </Heading>
         </Box>
+        {/* Prev/Next buttons */}
+        <IconButton
+          aria-label="Previous slide"
+          icon={<ChevronLeftIcon />}
+          position="absolute"
+          left={2}
+          top="50%"
+          transform="translateY(-50%)"
+          variant="ghost"
+          color="white"
+          _hover={{ bg: 'whiteAlpha.300' }}
+          onClick={goPrev}
+          size="lg"
+        />
+        <IconButton
+          aria-label="Next slide"
+          icon={<ChevronRightIcon />}
+          position="absolute"
+          right={2}
+          top="50%"
+          transform="translateY(-50%)"
+          variant="ghost"
+          color="white"
+          _hover={{ bg: 'whiteAlpha.300' }}
+          onClick={goNext}
+          size="lg"
+        />
+        {/* Dots */}
+        <HStack
+          position="absolute"
+          bottom={3}
+          left="50%"
+          transform="translateX(-50%)"
+          spacing={2}
+        >
+          {COVER_IMAGES.map((_, i) => (
+            <Box
+              key={i}
+              w={2}
+              h={2}
+              borderRadius="full"
+              bg={i === slideIndex ? 'white' : 'whiteAlpha.500'}
+              cursor="pointer"
+              onClick={() => setSlideIndex(i)}
+            />
+          ))}
+        </HStack>
       </Box>
 
       <Container maxW="container.xl" py={10}>
-        
-        {/* 2. About Me Section */}
+        {/* About Me Section */}
         <VStack spacing={8} align="stretch" mb={12}>
           <Box>
-            <Heading 
-              size={{ base: "lg", md: "xl" }} 
-              mb={4} 
-              borderBottom="2px solid" 
-              borderColor="blue.500" 
+            <Heading
+              size={{ base: "lg", md: "xl" }}
+              mb={4}
+              borderBottom="2px solid"
+              borderColor="blue.500"
               display="inline-block"
             >
               About Me
             </Heading>
-            <Text 
-              fontSize={{ base: "md", md: "lg" }} 
-              lineHeight="tall" 
+            <Text
+              fontSize={{ base: "md", md: "lg" }}
+              lineHeight="tall"
               textAlign="justify"
             >
               {about?.text || "Loading..."}
             </Text>
           </Box>
         </VStack>
-
-        {/* 3. Blogs Section */}
-        <Box mb={12}>
-          <Heading size="xl" mb={6} borderBottom="2px solid" borderColor="purple.500" display="inline-block">
-            Blogs
-          </Heading>
-          
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 4, md: 6 }}>
-            <BlogCategory title="Astronomy" items={blogs?.astronomy} />
-            <BlogCategory title="Sports" items={blogs?.sports} />
-            <BlogCategory title="Travel" items={blogs?.travel} />
-          </SimpleGrid>
-        </Box>
-        
       </Container>
 
       {/* 4. Footer */}
