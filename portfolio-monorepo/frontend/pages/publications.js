@@ -7,8 +7,11 @@ import {
   HStack, 
   Badge, 
   Divider,
-  useColorModeValue
+  useColorModeValue,
+  Link,
+  Icon
 } from '@chakra-ui/react';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { motion } from 'framer-motion';
 
 const MotionBox = motion(Box);
@@ -70,7 +73,7 @@ export default function Publications({ publications }) {
         bgClip="text"
         fontWeight="bold"
       >
-        Publications
+        News
       </Heading>
       
       <MotionBox
@@ -113,7 +116,7 @@ export default function Publications({ publications }) {
                   >
                     {getTypeIcon(publication.type)}
                   </Box>
-                  <VStack align="flex-start" spacing={3} flex={1}>
+                    <VStack align="flex-start" spacing={3} flex={1}>
                     <HStack spacing={3} flexWrap="wrap" align="flex-start">
                       <Badge
                         colorScheme={getTypeColor(publication.type)}
@@ -153,6 +156,20 @@ export default function Publications({ publications }) {
                           <Text fontWeight="medium">{publication.dates}</Text>
                         </HStack>
                       </HStack>
+
+                      {publication.url && (
+                        <Link 
+                          href={publication.url} 
+                          isExternal 
+                          color="blue.500" 
+                          fontSize="sm"
+                          fontWeight="semibold"
+                          _hover={{ color: "blue.600", textDecoration: "underline" }}
+                        >
+                          View details{" "}
+                          <Icon as={ExternalLinkIcon} boxSize={3} ml={1} />
+                        </Link>
+                      )}
                     </VStack>
                   </VStack>
                 </HStack>
