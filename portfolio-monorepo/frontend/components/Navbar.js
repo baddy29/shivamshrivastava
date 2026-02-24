@@ -1,8 +1,16 @@
 import Link from 'next/link';
 import { Flex, Box, Spacer, Text, HStack } from '@chakra-ui/react';
 
+const TABS = [
+  { slug: 'projects', label: 'Projects' },
+  { slug: 'education', label: 'Education' },
+  { slug: 'career', label: 'Career' },
+  { slug: 'skills', label: 'Skills' },
+  { slug: 'publications', label: 'News' },
+  { slug: 'affiliations', label: 'Affiliations' },
+];
+
 export default function Navbar() {
-  const tabs = ['projects', 'education', 'career', 'skills', 'publications', 'affiliations'];
   
   return (
     <Flex bg="blue.600" p={4} color="white" align="center">
@@ -32,9 +40,9 @@ export default function Navbar() {
         }}
       >
         <HStack spacing={4} px={2}>
-          {tabs.map(t => (
-            <Box key={t}>
-              <Link href={`/${t}`}>{t.charAt(0).toUpperCase() + t.slice(1)}</Link>
+          {TABS.map(tab => (
+            <Box key={tab.slug}>
+              <Link href={`/${tab.slug}`}>{tab.label}</Link>
             </Box>
           ))}
         </HStack>

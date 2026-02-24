@@ -1,12 +1,40 @@
 {
   "publications": [
     {
+      "title": "Keypoint-Aware Human Body Part Segmentation via a Dual-Discriminator Generative Adversarial Network",
+      "authors": "Shrivastava, S. and Na, H. S.",
+      "venue": "INFORMS Annual Meeting 2025",
+      "location": "Georgia World Congress Center, Atlanta, GA, USA",
+      "dates": "October 26-29, 2025",
+      "url": "https://www.linkedin.com/posts/shivam-shrivastava-18a14513a_informs2025-operationsresearch-ugcPost-7390147693160861696-hf-s?utm_source=share&utm_medium=member_desktop&rcm=ACoAACHWEroB6ogILCSe_2ZKpfzQQYsSmATb8S0",
+      "type": "Conference Presentation"
+    },
+    {
+      "title": "Post-Disaster Damage Assessment from High-Resolution Satellite Imagery Using D-Linknet Hierarchical Transformer with Radon-Transformed Fixed Positional Encoding",
+      "authors": "Shrivastava, S. and Na, H. S.",
+      "venue": "INFORMS Annual Meeting 2025",
+      "location": "Georgia World Congress Center, Atlanta, GA, USA",
+      "dates": "October 26-29, 2025",
+      "url": "https://submissions.mirasmart.com/InformsAnnual2025/Itinerary/PresentationDetail.aspx?evdid=7586",
+      "type": "Conference Presentation"
+    },
+    {
       "title": "Post-disaster damage assessment from high-resolution satellite imagery using D-LinkNet with hierarchical transformer difference blocks",
       "authors": "Shrivastava, S. and Na, H. S.",
       "venue": "2025 NHERI Computational Symposium, Session 7C",
-      "location": "Los Angeles, CA",
+      "location": "Los Angeles, CA, USA",
       "dates": "February 5-7, 2025",
       "notes": "NSF-funded travel grant support",
+      "url": "https://simcenter.designsafe-ci.org/nheri-computational-symposium/2025/agenda/session-abstracts/presenters-session-7c/",
+      "type": "Conference Presentation"
+    },
+    {
+      "title": "A comparative study on Facial Expression Recognition techniques",
+      "authors": "Vargis, B., Mishra, R., Singh, M, Shrivastava, S., and Shubhangi",
+      "venue": "2018 5th International Conference on Computing for Sustainable Global Development (INDIACom)",
+      "location": "New Delhi, India",
+      "dates": "March 14-16, 2018",
+      "url": "http://bvicam.in/INDIACom/news/INDIACom%202018%20Proceedings/Main/papers/2373.pdf",
       "type": "Conference Presentation"
     }
   ]
