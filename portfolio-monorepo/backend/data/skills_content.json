@@ -1,60 +1,87 @@
 {
   "skills": [
     {
-      "category": "Programming Languages",
-      "icon": "💻",
+      "category": "Optimization & Algorithm Design",
+      "icon": "📈",
       "items": [
         {
-          "name": "Python",
-          "technologies": ["PyTorch", "Pandas", "NumPy", "Scikit-learn"]
-        },
-        {
-          "name": "Java",
-          "technologies": ["Spring Boot", "JEE", "REST APIs"]
-        },
-        {
-          "name": "Scripting",
-          "technologies": ["JavaScript", "jQuery", "Next.js", "AJAX"]
+          "name": "Optimization & Algorithms",
+          "technologies": [
+            "Integer Programming",
+            "Reinforcement Learning (Deep Q-Learning)",
+            "Heuristic Design",
+            "Sample Average Approximation",
+            "Pyomo",
+            "Gurobi"
+          ]
         }
       ]
     },
     {
-      "category": "Database & ORM",
-      "icon": "🗄️",
-      "items": [
-        {
-          "name": "Database Management",
-          "technologies": ["SQL", "Hibernate"]
-        }
-      ]
-    },
-    {
-      "category": "Development Tools",
-      "icon": "🛠️",
-      "items": [
-        {
-          "name": "Development Tools",
-          "technologies": ["Swagger", "Postman", "Git"]
-        }
-      ]
-    },
-    {
-      "category": "Methodologies",
-      "icon": "📋",
-      "items": [
-        {
-          "name": "Agile Methodologies",
-          "technologies": ["JIRA", "Kanban"]
-        }
-      ]
-    },
-    {
-      "category": "Deep Learning",
+      "category": "Machine Learning & Deep Learning",
       "icon": "🧠",
       "items": [
         {
-          "name": "Deep Learning Frameworks",
-          "technologies": ["CNNs", "MLPs", "GANs", "Transformers"]
+          "name": "ML & DL",
+          "technologies": [
+            "CNNs",
+            "Transformers",
+            "GANs",
+            "RNNs/LSTMs",
+            "Federated Learning",
+            "SHAP/LIME (Explainability)"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Programming",
+      "icon": "💻",
+      "items": [
+        {
+          "name": "Languages & Frameworks",
+          "technologies": [
+            "Python (PyTorch, TensorFlow, Keras, Scikit-learn, Pyomo)",
+            "Java (Spring Boot, Hibernate)",
+            "JavaScript (Next.js)",
+            "SQL",
+            "NoSQL"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Systems & Infrastructure",
+      "icon": "⚙️",
+      "items": [
+        {
+          "name": "Platforms & Tooling",
+          "technologies": [
+            "AWS SageMaker",
+            "AWS MLOps",
+            "Kubernetes",
+            "CI/CD",
+            "Git",
+            "Hadoop (Big Data)",
+            "Azure",
+            "Multi-threading",
+            "Distributed Systems"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Research Methods",
+      "icon": "🔬",
+      "items": [
+        {
+          "name": "Research & Evaluation",
+          "technologies": [
+            "Experimental Design",
+            "A/B Testing",
+            "Causal Inference",
+            "Grant Writing"
+          ]
         }
       ]
     }
